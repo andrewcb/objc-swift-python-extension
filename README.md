@@ -16,12 +16,18 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> spam.add(3,4)
 This is in Swift
 7
+>>>  c = spam.Counter()
+>>>  c
+<spam.Counter; count:0>
+>>> c.increment()
+>>> c.count
+1
 >>>
 ```
 
 ## The code
 
-The code is a minimal Hello-World-style example, intended as a test of the process of building a Python extension.  As such, it produces a file named `spam.so` implementing a module, `spam`, which contains one function: `add`, which takes two integers and returns their sum. The function that does the addition (the business logic) is implemented in a Swift file.
+The code is a minimal Hello-World-style example, intended as a test of the process of building a Python extension.  As such, it produces a file named `spam.so` implementing a module which is  named, as per Pythonic tradition, `spam`. This module contains one standalone function: `add`, which takes two integers and returns their sum, and a class, `Counter`, which implements a simple integer counter, with a read-only `count` attribute and `increment()` and `reset()` methods. The business logic (the addition function and the counter class) is implemented in a Swift source file.
 
 ## Methodology
 
